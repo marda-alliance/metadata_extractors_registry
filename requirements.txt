@@ -2,3 +2,5 @@ pydantic
 fastapi
 mongomock
 uvicorn
+linkml
+invoke
