@@ -2,8 +2,8 @@
     "filetypes": [
         {
             "id": "biologic-mpr",
-            "name": "Biologic MPR file",
-            "associated_vendors": ["Biologic"],
+            "name": "BioLogic MPR file",
+            "associated_vendors": ["BioLogic"],
             "subject": ["electrochemistry", "voltammetry", "impedance spectroscopy", "potentiometry"]
         }
     ]
