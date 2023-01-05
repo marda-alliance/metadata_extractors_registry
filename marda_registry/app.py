@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
-from pydantic import BaseModel
+import json
+import pathlib
+from functools import lru_cache
+from typing import List, Type
 from uuid import UUID
-from fastapi import FastAPI
+
 import mongomock as pymongo
 import uvicorn
-import pathlib 
-import json
-from functools import lru_cache
-
-from typing import Type
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
 from .models import FileType
 
@@ -30,25 +30,39 @@ db = pymongo.MongoClient().registry
 def get_filetypes():
     return list(db.filetypes.find())
 
-@app.get("/filetypes/{uuid}", response_model=FileType)
-def get_filetype(uuid: str):
-    return list(db.filetypes.find({"uuid": uuid}))
 
-@app.get("/search-filetypes")
+@app.get("/filetypes/{id}", response_model=FileType)
+def get_filetype(id: str):
+    result = db.filetypes.find_one({"id": id.lower()}, projection={"_id": 0})
+    if not result:
+        raise HTTPException(status_code=404, detail="File type not found")
+    return result
+
+
+@app.get("/search-filetypes", response_model=List[FileType])
 def search_file_types(query: str):
-    return db.filetypes.find({"$text": query})
+    results = list(db.filetypes.find({"$text": query}, projection={"_id": 0}))
+    return results
+
 
 @app.get("/extractors")
 def get_extractors():
-    return list(db.extractors.find({}))
+    return list(db.extractors.find({}, projection={"_id": 0}))
 
-@app.get("/extractors/{uuid}", response_model=Extractor)
-def get_extractor(uuid: str):
-    return list(db.extractors.find({"uuid": uuid}))
 
-@app.get("/search-extractors")
-def search_file_types(query: str):
-    return db.extractors.find({"$text": query})
+@app.get("/extractors/{id}", response_model=Extractor)
+def get_extractor(id: str):
+    result = db.extractors.find_one({"id": id.lower()}, projection={"_id": 0})
+    if not result:
+        raise HTTPException(status_code=404, detail="File type not found")
+    return result
+
+
+@app.get("/search-extractors", response_model=List[Extractor])
+def search_extractors(query: str):
+    results = list(db.extractors.find({"$text": query}, projection={"_id": 0}))
+    return results
+
 
 @app.get("/")
 def get_info():
@@ -61,9 +75,9 @@ def _get_info():
         meta = json.load(f)
     return meta
 
+
 @app.on_event("startup")
 async def load_data():
-
     def load_registry_collection(model: Type, validate: bool = True):
         name = model.__name__.lower() + "s"
         data_file = pathlib.Path(__file__).parent / "data" / f"{name}.json"
