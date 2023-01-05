@@ -57,16 +57,16 @@ def get_info():
 
 @lru_cache(maxsize=1)
 def _get_info():
-    with open(pathlib.Path(__file__).parent / "registry" / "meta.json") as f:
+    with open(pathlib.Path(__file__).parent / "data" / "meta.json") as f:
         meta = json.load(f)
     return meta
 
 @app.on_event("startup")
 async def load_data():
 
-    def load_registry_collection(model: Type, validate: bool = False):
+    def load_registry_collection(model: Type, validate: bool = True):
         name = model.__name__.lower() + "s"
-        data_file = pathlib.Path(__file__).parent / "registry" / f"{name}.json"
+        data_file = pathlib.Path(__file__).parent / "data" / f"{name}.json"
         with open(data_file, "r") as f:
             data = json.load(f)
         assert isinstance(data[name], list)
@@ -75,7 +75,8 @@ async def load_data():
             for entry in data[name]:
                 model(**entry)
 
-        db[name].insert_many(data[name])
+        if data[name]:
+            db[name].insert_many(data[name])
 
     load_registry_collection(Extractor)
     load_registry_collection(FileType)
