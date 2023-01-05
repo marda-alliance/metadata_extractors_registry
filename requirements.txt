@@ -1,6 +1,7 @@
-pydantic
 fastapi
-mongomock
-uvicorn
-linkml
 invoke
+linkml
+mongomock
+pre-commit
+pydantic
+uvicorn
