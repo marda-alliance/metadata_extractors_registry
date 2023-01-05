@@ -1,0 +1,10 @@
+{
+    "filetypes": [
+        {
+            "id": "biologic-mpr",
+            "name": "Biologic MPR file",
+            "associated_vendors": ["Biologic"],
+            "subject": ["electrochemistry", "voltammetry", "impedance spectroscopy", "potentiometry"]
+        }
+    ]
+}

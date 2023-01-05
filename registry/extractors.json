@@ -1,9 +1,0 @@
-{
-    "extractors": [
-        {
-            "author": "QE Foundation",
-            "input_file_type": "UPF <asdfsaf>",
-            "output_format": "JSON <asdfaf>"
-        }
-    ]
-}
