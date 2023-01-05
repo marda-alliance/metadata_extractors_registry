@@ -7,7 +7,7 @@ A place to develop and discuss the MaRDA Extractors WG registry.
 Clone repository with submodules and install deps in a fresh Python virtualenv:
 
 ```
-git clone git@github.com:marda-alliance/marda_extractors_registry --recursve-submodules
+git clone git@github.com:marda-alliance/marda_extractors_registry --recurse-submodules
 pip install -r requirements.txt
 ```
 
