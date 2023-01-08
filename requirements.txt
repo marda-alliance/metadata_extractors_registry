@@ -1,0 +1,7 @@
+fastapi
+invoke
+linkml
+mongomock
+pre-commit
+pydantic
+uvicorn
