@@ -21,7 +21,14 @@ class Extractor(BaseModel):
     input_file_types: list[UUID]
 
 
-app = FastAPI()
+__api_version__ = "0.1.0"
+
+
+app = FastAPI(
+    title="MaRDA extractors registry API",
+    description=f"""This server implements v{__api_version__} of the [MaRDA extractors WG](https://github.com/marda-alliance/metadata_extractors) registry API.""",
+    version=__api_version__,
+)
 
 db = pymongo.MongoClient().registry
 
