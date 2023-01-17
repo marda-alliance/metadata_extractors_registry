@@ -3,13 +3,14 @@
 import json
 import pathlib
 from functools import lru_cache
-from typing import List, Type
+from typing import List
 
 import mongomock as pymongo
 import uvicorn
 from fastapi import FastAPI, HTTPException
 
 from .models import Extractor, FileType
+from .utils import load_registry_collection
 
 __api_version__ = "0.1.0"
 
@@ -20,7 +21,7 @@ app = FastAPI(
     version=__api_version__,
 )
 
-db = pymongo.MongoClient().registry
+db: pymongo.Database = pymongo.MongoClient().registry
 
 
 @app.get("/filetypes")
@@ -76,22 +77,9 @@ def _get_info():
 
 @app.on_event("startup")
 async def load_data():
-    def load_registry_collection(model: Type, validate: bool = True):
-        name = model.__name__.lower() + "s"
-        data_file = pathlib.Path(__file__).parent / "data" / f"{name}.json"
-        with open(data_file, "r") as f:
-            data = json.load(f)
-        assert isinstance(data[name], list)
 
-        if validate:
-            for entry in data[name]:
-                model(**entry)
-
-        if data[name]:
-            db[name].insert_many(data[name])
-
-    load_registry_collection(Extractor)
-    load_registry_collection(FileType)
+    load_registry_collection(Extractor, database=db)
+    load_registry_collection(FileType, database=db)
 
     _get_info()
 
