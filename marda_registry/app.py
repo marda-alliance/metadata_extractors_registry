@@ -4,29 +4,19 @@ import json
 import pathlib
 from functools import lru_cache
 from typing import List, Type
-from uuid import UUID
 
 import mongomock as pymongo
 import uvicorn
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 
-from .models import FileType
-
-
-class Extractor(BaseModel):
-    authors: list[str] | None
-    uuid: UUID
-    contact: list[str]
-    input_file_types: list[UUID]
-
+from .models import Extractor, FileType
 
 __api_version__ = "0.1.0"
 
 
 app = FastAPI(
     title="MaRDA extractors registry API",
-    description=f"""This server implements v{__api_version__} of the [MaRDA extractors WG](https://github.com/marda-alliance/metadata_extractors) registry API.""",
+    description=f"This server implements v{__api_version__} of the [MaRDA extractors WG](https://github.com/marda-alliance/metadata_extractors) registry API.",  # noqa: E501
     version=__api_version__,
 )
 
