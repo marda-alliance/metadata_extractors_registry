@@ -1,12 +1,15 @@
-from invoke import task
 from pathlib import Path
-        
+
+from invoke import task
+
 MODEL_DIRECTORY = Path(__file__).parent / "marda_registry" / "models"
+
 
 @task
 def regenerate_models(_):
-    import linkml.generators.pydanticgen as pd
     import glob
+
+    import linkml.generators.pydanticgen as pd
 
     schemas = glob.glob("./schemas/schemas/*.yml")
 
@@ -20,6 +23,5 @@ def regenerate_models(_):
         output = gen.serialize()
         with open(MODEL_DIRECTORY / f"{schema_path.name.strip('.yml')}.py", "w") as f:
             f.writelines(output)
-            
-        print("Done")
 
+        print("Done")
