@@ -54,4 +54,5 @@ jobs:
               run: pip install -r requirements.txt
 
             - name: Run database ingestion tasks
-              run: invoke generate-database
+              run: |
+                  invoke regenerate-models
