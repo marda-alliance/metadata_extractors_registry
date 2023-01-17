@@ -5,7 +5,8 @@ name: >-
     BioLogic MPT file
 description: >-
     A text data file created by BioLogic EC-Lab from data from BioLogic cyclers, containing
-    time- and frequency-domain data pertaining to many electrochemical techniques, such as
+    time- and frequency-domain data pertaining to many electrochemical techniques,
+    such as
     voltammetry, potentiometry, coulometry and impedance spectroscopy.
 associated_vendors:
     - BioLogic
