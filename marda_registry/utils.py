@@ -1,5 +1,4 @@
 import glob
-import json
 import pathlib
 from typing import Type
 
