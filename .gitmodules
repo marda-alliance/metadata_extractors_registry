@@ -1,0 +1,3 @@
+[submodule "metadata_extractors_schema"]
+	path = schemas
+	url = git@github.com:marda-alliance/metadata_extractors_schema
