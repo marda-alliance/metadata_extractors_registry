@@ -70,6 +70,7 @@ def get_info():
 def _get_info():
     with open(pathlib.Path(__file__).parent / "data" / "meta.json") as f:
         meta = json.load(f)
+    meta["api_version"] = __api_version__
     return meta
 
 
