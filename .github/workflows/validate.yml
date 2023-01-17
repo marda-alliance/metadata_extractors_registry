@@ -55,4 +55,4 @@ jobs:
 
             - name: Run database ingestion tasks
               run: |
-                  invoke regenerate-models
+                  invoke validate-entries
