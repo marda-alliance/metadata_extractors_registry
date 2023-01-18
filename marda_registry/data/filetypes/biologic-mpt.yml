@@ -1,12 +1,13 @@
 ---
 id: >-
-    biologic-mpr
+    biologic-mpt
 name: >-
-    BioLogic MPR file
+    BioLogic MPT file
 description: >-
-    A binary data file created by BioLogic cyclers, containing time- and frequency-domain
-    data pertaining to many electrochemical techniques, such as voltammetry,
-    potentiometry, coulometry and impedance spectroscopy.
+    A text data file created by BioLogic EC-Lab from data from BioLogic cyclers, containing
+    time- and frequency-domain data pertaining to many electrochemical techniques,
+    such as
+    voltammetry, potentiometry, coulometry and impedance spectroscopy.
 associated_vendors:
     - BioLogic
 subject:
