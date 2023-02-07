@@ -1,0 +1,29 @@
+---
+id: >-
+    quantum-design-dat
+name: >-
+    Quantum Design Data File
+description: >-
+    A csv-based text data file created by Quantum Design physical property measurement
+    systems and magnetic property measurement systems, containing the results of physical
+    property measurements of various types. The  measurements may be the result of
+    processing from additional raw data, e.g. raw SQUID voltage data in a Quantum
+    Design .rw.dat file.
+associated_vendors:
+    - Quantum Design
+subject:
+    - magnetometry
+    - resistivity
+    - transport
+    - heat capacity
+    - thermal measurements
+    - SQUID
+associated_instruments:
+    - Quantum Design PPMS
+    - Quantum Design DynaCool
+    - Quantum Design MPMS
+    - Quantum Design MPMS-XL
+    - Quantum Design MPMS3
+    - Quantum Design SquidVSM
+associated_software:
+    - Quantum Design MultiVu
