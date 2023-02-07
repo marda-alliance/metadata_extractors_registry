@@ -77,7 +77,6 @@ def _get_info():
 
 @app.on_event("startup")
 async def load_data():
-
     load_registry_collection(Extractor, database=db)
     load_registry_collection(FileType, database=db)
 

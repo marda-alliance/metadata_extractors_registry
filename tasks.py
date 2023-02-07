@@ -31,7 +31,6 @@ def regenerate_models(_):
 
 @task(pre=[regenerate_models])
 def validate_entries(_):
-
     print("Validating entries")
 
     from marda_registry.models import Extractor, FileType
