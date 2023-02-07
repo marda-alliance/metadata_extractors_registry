@@ -10,8 +10,10 @@ associated_vendors:
 subject:
     - magnetometry
     - resistivity
+    - transport
     - heat capacity
     - thermal measurements
+    - SQUID
 associated_instruments:
     - Quantum Design PPMS
     - Quantum Design DynaCool
