@@ -4,7 +4,11 @@ id: >-
 name: >-
     Quantum Design Data File
 description: >-
-    A csv-based text data file created by Quantum Design physical property measurement systems and magnetic property measurement systems, containing the results of physical property measurements of various types. The  measurements may be the result of processing from additional raw data, e.g. raw SQUID voltage data in a Quantum Design .rw.dat file.
+    A csv-based text data file created by Quantum Design physical property measurement
+    systems and magnetic property measurement systems, containing the results of physical
+    property measurements of various types. The  measurements may be the result of
+    processing from additional raw data, e.g. raw SQUID voltage data in a Quantum
+    Design .rw.dat file.
 associated_vendors:
     - Quantum Design
 subject:
@@ -23,4 +27,3 @@ associated_instruments:
     - Quantum Design SquidVSM
 associated_software:
     - Quantum Design MultiVu
-
