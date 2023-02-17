@@ -40,5 +40,5 @@ usage: >-
     - cli:yadg extract {{ file_type }} {{ file_path }}
 instructions: >-
     Install the package into a Python 3.9+ environment with
-    `pip install yadg`. After activating the environment, the 
+    `pip install yadg`. After activating the environment, the
     `extract` entrypoint will be available at the command-line.
