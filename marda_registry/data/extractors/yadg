@@ -1,0 +1,44 @@
+---
+id: >-
+    yadg
+name: >-
+    yet another datagram
+description: >-
+    yadg is a set of tools to extract and parse raw instrument data.
+subject:
+    - electrochemistry
+    - voltammetry
+    - impedance spectropscopy
+    - potentiometry
+    - gas chromatography
+    - liquid chromatography
+    - x-ray diffraction
+    - x-ray photoelectron spectroscopy
+citations:
+    - identifier: doi:10.21105/joss.04166
+      creators:
+          - P. Kraus
+          - N. Vetsch
+          - C. Battaglia
+      title: "yadg: yet another datagram"
+      type: article
+    - identifier: https://github.com/dgbowl/yadg
+      creators:
+          - P. Kraus
+          - N. Vetsch
+      title: yadg github repository
+      type: software
+    - identifier: doi:10.5281/zenodo.6547425
+      creators:
+          - P. Kraus
+          - N. Vetsch
+      title: "yadg: yet another datagram"
+      type: software
+source_repository_url: https://github.com/dgbowl/yadg
+documentation_url: https://dgbowl.github.io/yadg
+usage: >-
+    - cli:yadg extract {{ file_type }} {{ file_path }}
+instructions: >-
+    Install the package into a Python 3.9+ environment with
+    `pip install yadg`. After activating the environment, the 
+    `extract` entrypoint will be available at the command-line.
