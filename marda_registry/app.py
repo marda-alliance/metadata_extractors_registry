@@ -26,7 +26,7 @@ db: pymongo.Database = pymongo.MongoClient().registry
 
 @app.get("/filetypes")
 def get_filetypes():
-    return list(db.filetypes.find())
+    return list(db.filetypes.find(projection={"_id": 0}))
 
 
 @app.get("/filetypes/{id}", response_model=FileType)
