@@ -22,7 +22,7 @@ citations:
           - C. Battaglia
       title: 'yadg: yet another datagram'
       type: article
-    - identifier: https://github.com/dgbowl/yadg
+    - uri: https://github.com/dgbowl/yadg
       creators:
           - P. Kraus
           - N. Vetsch
