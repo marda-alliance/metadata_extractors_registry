@@ -32,8 +32,12 @@ def get_filetypes():
 @app.get("/filetypes/{id}", response_model=FileType)
 def get_filetype(id: str):
     result = db.filetypes.find_one({"id": id.lower()}, projection={"_id": 0})
+
+    registered_extractors = db.extractors.find({"supported_filetypes": id})
     if not result:
         raise HTTPException(status_code=404, detail="File type not found")
+
+    result["registered_extractors"] = registered_extractors
     return result
 
 
