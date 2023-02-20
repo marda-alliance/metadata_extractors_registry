@@ -8,7 +8,8 @@ description: >-
 supported_filetypes:
     - id: biologic-mpr
       description: >-
-          Note: Several fields in file headers are not translated into meaningful parameters.
+          Note: Several fields in file headers are not translated into meaningful
+          parameters.
     - id: biologic-mpt
 subject:
     - electrochemistry
