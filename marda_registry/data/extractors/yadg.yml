@@ -36,7 +36,7 @@ citations:
       type: software
 source_repository: https://github.com/dgbowl/yadg
 documentation: https://dgbowl.github.io/yadg
-usage: >-
+usage:
     - cli:yadg extract {{ file_type }} {{ file_path }}
 instructions: >-
     Install the package into a Python 3.9+ environment with
