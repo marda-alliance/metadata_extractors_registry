@@ -15,7 +15,7 @@ subject:
     - x-ray diffraction
     - x-ray photoelectron spectroscopy
 citations:
-    - identifier: doi:10.21105/joss.04166
+    - uri: doi:10.21105/joss.04166
       creators:
           - P. Kraus
           - N. Vetsch
@@ -28,14 +28,14 @@ citations:
           - N. Vetsch
       title: yadg github repository
       type: software
-    - identifier: doi:10.5281/zenodo.6547425
+    - uri: doi:10.5281/zenodo.6547425
       creators:
           - P. Kraus
           - N. Vetsch
       title: "yadg: yet another datagram"
       type: software
-source_repository_url: https://github.com/dgbowl/yadg
-documentation_url: https://dgbowl.github.io/yadg
+source_repository: https://github.com/dgbowl/yadg
+documentation: https://dgbowl.github.io/yadg
 usage: >-
     - cli:yadg extract {{ file_type }} {{ file_path }}
 instructions: >-
