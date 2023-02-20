@@ -5,6 +5,11 @@ name: >-
     yet another datagram
 description: >-
     yadg is a set of tools to extract and parse raw instrument data.
+supported_filetypes:
+    - id: biologic-mpr
+      description: >-
+          Note: Several fields in file headers are not translated into meaningful parameters.
+    - id: biologic-mpt
 subject:
     - electrochemistry
     - voltammetry
