@@ -20,7 +20,7 @@ citations:
           - P. Kraus
           - N. Vetsch
           - C. Battaglia
-      title: "yadg: yet another datagram"
+      title: 'yadg: yet another datagram'
       type: article
     - identifier: https://github.com/dgbowl/yadg
       creators:
@@ -32,7 +32,7 @@ citations:
       creators:
           - P. Kraus
           - N. Vetsch
-      title: "yadg: yet another datagram"
+      title: 'yadg: yet another datagram'
       type: software
 source_repository: https://github.com/dgbowl/yadg
 documentation: https://dgbowl.github.io/yadg
