@@ -1,8 +1,18 @@
 # MaRDA WG Extractors Registry
 
 A place to develop and discuss the MaRDA Extractors WG registry.
+The idea is to collect various file formats used in materials science and chemistry, describe them with metadata, and provide links to software projects that can parse them.
 
-## Usage
+By providing this data in a web API, it hoped that users can discover new extractors more easily and metadata standards can be developed for the output of extractors to enable schemas to proliferate throughout the field.
+
+The state of the `main` branch is deployed to https://marda-registry.fly.dev/, with API docs (and built-in client) accessible at https://marda-registry.fly.dev/redoc.
+
+## Contributing
+
+You can contribute file type and extractor entries to this registry by creating YAML files under `./data/filetypes` and `./data/extractors`.
+After submitting a pull request, this data will be validated and added to the deployed database once it is merged.
+
+## Development
 
 Clone repository with submodules and install deps in a fresh Python virtualenv:
 
