@@ -11,6 +11,8 @@ supported_filetypes:
           Note: Several fields in file headers are not translated into meaningful
           parameters.
     - id: biologic-mpt
+license: >-
+    GPL-3.0-only
 subject:
     - electrochemistry
     - voltammetry
