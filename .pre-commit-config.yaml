@@ -20,7 +20,7 @@ repos:
             args: [--width, '80']
 
     - repo: https://github.com/adrienverge/yamllint.git
-      rev: v1.30.0 # or higher tag
+      rev: v1.31.0 # or higher tag
       hooks:
           - id: yamllint
             args: [--format, parsable, --strict, -d, '{line-length: {max: 100}}']
@@ -37,7 +37,7 @@ repos:
           - id: flake8
 
     - repo: https://github.com/pre-commit/mirrors-mypy
-      rev: v1.1.1
+      rev: v1.2.0
       hooks:
           - id: mypy
             name: MyPy
