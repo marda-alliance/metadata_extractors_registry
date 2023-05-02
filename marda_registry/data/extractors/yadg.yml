@@ -51,7 +51,15 @@ citations:
 source_repository: https://github.com/dgbowl/yadg
 documentation: https://dgbowl.github.io/yadg
 usage:
-    - cli:yadg extract {{ file_type }} {{ file_path }}
+    - method: cli
+      command: yadg extract $input_filetype $input_file $output_file
+    - method: python
+      import: yadg
+      command: yadg.extractors.extract($input_filetype, $input_file)
+installation:
+    - method: pip
+      packages:
+        - yadg>=5.0a2
 instructions: >-
     Install the package into a Python 3.9+ environment with
     `pip install yadg`. After activating the environment, the
