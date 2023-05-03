@@ -1,0 +1,18 @@
+---
+id: >-
+    phi-spe
+name: >-
+    PHI SPE Multipak file
+description: >-
+    A binary file containing the raw data from PHI spectrometers. The files contain
+    an
+    ASCII header, followed by the data records in binary format.
+associated_vendors:
+    - ULVAC-PHI
+subject:
+    - x-ray photoelectron spectroscopy
+    - Auger electron spectroscopy
+associated_instruments:
+    - PHI Quantum 2000
+associated_software:
+    - IGOR Pro

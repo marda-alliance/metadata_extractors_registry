@@ -11,6 +11,12 @@ supported_filetypes:
           Note: Several fields in file headers are not translated into meaningful
           parameters.
     - id: biologic-mpt
+    - id: agilent-ch
+    - id: agilent-dx
+      description: >-
+          Note: Only .ch files contained in the .dx archive are parsed.
+    - id: phi-spe
+    - id: panalytical-xrdml
 license: >-
     GPL-3.0-only
 subject:

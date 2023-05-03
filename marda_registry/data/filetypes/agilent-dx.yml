@@ -1,0 +1,17 @@
+---
+id: >-
+    agilent-dx
+name: >-
+    Agilent OpenLab data file
+description: >-
+    A raw data export file for Agilent OpenLab CDS. It is actually a zipped archive
+    containing other binary data file formats.
+associated_vendors:
+    - Agilent
+    - HP
+subject:
+    - chromatography
+associated_instruments:
+    - Agilent 1260
+associated_software:
+    - Agilent OpenLab
