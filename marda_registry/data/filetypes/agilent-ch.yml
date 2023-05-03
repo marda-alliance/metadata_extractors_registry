@@ -1,0 +1,19 @@
+---
+id: >-
+    agilent-ch
+name: >-
+    Agilent ChemStation export file
+description: >-
+    A binary data file created by Agilent ChemStation or OpenLab software, for liquid
+    chromatographs. The files contain the limits of the retention time axis as well as
+    the signal data.
+associated_vendors:
+    - Agilent
+    - HP
+subject:
+    - chromatography
+associated_instruments:
+    - Agilent 1260
+associated_software:
+    - Agilent ChemStation
+    - Agilent OpenLab
