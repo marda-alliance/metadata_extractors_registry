@@ -4,7 +4,8 @@ id: >-
 name: >-
     PANalytical XRDML file
 description: >-
-    A structured XML file, containing data from diffraction experiments, developed by
+    A structured XML file, containing data from diffraction experiments, developed
+    by
     PANalytical.
 associated_vendors:
     - PANalytical
