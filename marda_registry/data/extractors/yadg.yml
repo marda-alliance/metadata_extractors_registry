@@ -17,8 +17,8 @@ supported_filetypes:
           Note: Only .ch files contained in the .dx archive are parsed.
     - id: phi-spe
     - id: panalytical-xrdml
-license: >-
-    GPL-3.0-only
+license:
+    spdx: GPL-3.0-only
 subject:
     - electrochemistry
     - voltammetry
@@ -52,10 +52,10 @@ source_repository: https://github.com/dgbowl/yadg
 documentation: https://dgbowl.github.io/yadg
 usage:
     - method: cli
-      command: yadg extract $input_filetype $input_file $output_file
+      command: yadg extract {{ input_type }} {{ input_path }} {{ output_path }}
     - method: python
       import: yadg
-      command: yadg.extractors.extract($input_filetype, $input_file)
+      command: yadg.extractors.extract({{ input_path }}, {{ input_path }})
 installation:
     - method: pip
       packages:
