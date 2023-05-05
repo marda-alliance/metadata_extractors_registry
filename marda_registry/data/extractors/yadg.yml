@@ -54,7 +54,7 @@ usage:
     - method: cli
       command: yadg extract {{ input_type }} {{ input_path }} {{ output_path }}
     - method: python
-      import: yadg
+      setup: yadg
       command: yadg.extractors.extract({{ input_path }}, {{ input_path }})
 installation:
     - method: pip
