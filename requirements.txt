@@ -3,5 +3,5 @@ invoke
 linkml
 mongomock
 pre-commit
-pydantic
+pydantic~=1.0
 uvicorn
