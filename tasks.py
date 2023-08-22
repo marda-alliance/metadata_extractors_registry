@@ -21,7 +21,7 @@ def regenerate_models(_):
     for schema in schemas:
         print(schema)
         schema_path = Path(schema)
-        gen = pd.PydanticGenerator(schema, verbose=True)
+        gen = pd.PydanticGenerator(schema, pydantic_version="2", verbose=True)
         output = gen.serialize()
         with open(MODEL_DIRECTORY / f"{schema_path.name.strip('.yml')}.py", "w") as f:
             f.writelines(output)
