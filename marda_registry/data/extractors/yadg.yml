@@ -62,7 +62,7 @@ installation:
           - yadg>=5.0a2
     - method: pip
       packages:
-          - git+https://github.com/dgbowl/yadg.git@5.0a2
+          - git+https://github.com/dgbowl/yadg.git@5.0a5
 instructions: >-
     Install the package into a Python 3.9+ environment with
     `pip install yadg`. After activating the environment, the
