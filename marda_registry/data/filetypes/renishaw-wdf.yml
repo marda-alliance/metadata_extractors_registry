@@ -1,0 +1,20 @@
+---
+id: >-
+    renishaw-wdf
+name: >-
+    Renishaw WDF file
+description: >-
+    A binary data file created by Renishaw Raman microscopes, optimised to handle
+    very large datasets of multiple (millions) of Raman spectra taken at points of
+    an optical image.
+associated_vendors:
+    - Renishaw
+subject:
+    - raman
+    - microscopy
+associated_instruments:
+    - Renishaw inVia confocal Raman microscope
+    - Renishaw Virsa Raman analyser
+    - Renishaw RA800 benchtop Raman analyser
+associated_software:
+    - Renishaw Windows-based Raman Environment (WiRE)

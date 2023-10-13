@@ -1,0 +1,46 @@
+---
+id: >-
+    rosettaasciio
+name: >-
+    RosettaSciIO
+description: >-
+    The Rosetta Scientific Input Output library aims at providing easy reading and
+    writing capabilities in Python for a wide range of scientific data formats. Thus
+    providing an entry point to the wide ecosystem of python packages for scientific
+    data analysis and computation, as well as an interoperability between different
+    file formats. Just as the Rosetta stone provided a translation between ancient
+    Egyptian hieroglyphs and ancient Greek. The RosettaSciIO library originates from
+    the HyperSpy project for multi-dimensional data analysis. As HyperSpy is rooted
+    in the electron microscopy community, data formats used by this community are
+    still particularly well represented.
+supported_filetypes:
+    - id: renishaw-wdf
+license:
+    spdx: GPL-3.0-only
+subject:
+    - raman
+    - electron-microscopy
+    - imaging
+citations:
+    - uri: doi:10.5281/zenodo.592838
+      title: HyperSpy
+      type: software
+source_repository: https://github.com/hyperspy/rosettasciio
+documentation: https://hyperspy.org/rosettasciio
+usage:
+    - method: python
+      setup: rsciio
+      command: rsciio.renishaw.file_reader({{ input_path }})
+      description: >-
+          This usage instruction is specifically for the renishaw-wdf file type.
+installation:
+    - method: pip
+      packages:
+          - rosettasciio
+    - method: pip
+      packages:
+          - git+https://github.com/hyperspy/rosettasciio
+instructions: >-
+    Install the package into a Python 3.9+ environment with
+    `pip install yadg`. After activating the environment, the
+    `extract` entrypoint will be available at the command-line.
