@@ -12,7 +12,7 @@ from fastapi import FastAPI, HTTPException
 from .models import Extractor, FileType
 from .utils import load_registry_collection
 
-__api_version__ = "0.1.0"
+__api_version__ = "0.2.0"
 
 
 app = FastAPI(
@@ -20,6 +20,8 @@ app = FastAPI(
     description=f"This server implements v{__api_version__} of the [MaRDA extractors WG](https://github.com/marda-alliance/metadata_extractors) registry API.",  # noqa: E501
     version=__api_version__,
 )
+
+api = FastAPI()
 
 db: pymongo.Database = pymongo.MongoClient().registry
 
@@ -89,5 +91,9 @@ async def load_data():
     _get_info()
 
 
+api.mount(f"/{__api_version__}", app)
+api.mount("/", app)
+
+
 if __name__ == "__main__":
-    uvicorn.run("__main__:app")
+    uvicorn.run("__main__:api")
