@@ -1,0 +1,11 @@
+---
+id: >-
+    nexus
+name: >-
+    NeXus Data Format
+description: >-
+    NeXus (https://www.nexusformat.org/) is a common data format for neutron, x-ray,
+    and muon science. It is being developed as an international standard by scientists
+    and programmers representing major scientific facilities in order to facilitate
+    greater cooperation in the analysis and visualization of neutron, x-ray, and muon
+    data.
