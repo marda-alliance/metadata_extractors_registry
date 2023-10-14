@@ -17,6 +17,8 @@ supported_filetypes:
     - id: renishaw-wdf
       template:
           input_type: renishaw
+    - id: nexus
+
 license:
     spdx: GPL-3.0-only
 subject:
@@ -33,8 +35,6 @@ usage:
     - method: python
       setup: rsciio
       command: rsciio.{{ input_type }}.file_reader({{ input_path }})
-      description: >-
-          This usage instruction is specifically for the renishaw-wdf file type.
 installation:
     - method: pip
       packages:
