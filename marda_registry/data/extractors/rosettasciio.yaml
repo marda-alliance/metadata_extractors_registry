@@ -15,6 +15,8 @@ description: >-
     still particularly well represented.
 supported_filetypes:
     - id: renishaw-wdf
+      template:
+          input_type: renishaw
 license:
     spdx: GPL-3.0-only
 subject:
@@ -30,7 +32,7 @@ documentation: https://hyperspy.org/rosettasciio
 usage:
     - method: python
       setup: rsciio
-      command: rsciio.renishaw.file_reader({{ input_path }})
+      command: rsciio.{{ input_type }}.file_reader({{ input_path }})
       description: >-
           This usage instruction is specifically for the renishaw-wdf file type.
 installation:
@@ -40,7 +42,4 @@ installation:
     - method: pip
       packages:
           - git+https://github.com/hyperspy/rosettasciio
-instructions: >-
-    Install the package into a Python 3.9+ environment with
-    `pip install yadg`. After activating the environment, the
-    `extract` entrypoint will be available at the command-line.
+      requires_python: ~=3.6
