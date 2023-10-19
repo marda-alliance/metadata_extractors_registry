@@ -63,7 +63,7 @@ installation:
     - method: pip
       packages:
           - yadg~=5.0
-      requires_python: >=3.9
+      requires_python: '>=3.9'
 instructions: >-
     Install the package into a Python 3.9+ environment with
     `pip install yadg`. After activating the environment, the
