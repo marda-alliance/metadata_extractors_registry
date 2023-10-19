@@ -53,18 +53,17 @@ documentation: https://dgbowl.github.io/yadg
 usage:
     - method: cli
       command: yadg extract {{ input_type }} {{ input_path }} {{ output_path }}
+    - method: cli
+      command: yadg extract -m {{ input_type }} {{ input_path }} {{ output_path }}
+      scope: meta-only
     - method: python
       setup: yadg
       command: yadg.extractors.extract({{ input_type }}, {{ input_path }})
 installation:
     - method: pip
       packages:
-          - yadg>=5.0a2
-      requires_python: ~=3.9
-    - method: pip
-      packages:
-          - git+https://github.com/dgbowl/yadg.git@5.0a5
-      requires_python: ~=3.9
+          - yadg~=5.0
+      requires_python: >=3.9
 instructions: >-
     Install the package into a Python 3.9+ environment with
     `pip install yadg`. After activating the environment, the
