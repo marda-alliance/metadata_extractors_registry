@@ -9,7 +9,8 @@ The state of the `main` branch is deployed to https://marda-registry.fly.dev/, w
 
 ## Contributing
 
-You can contribute file type and extractor entries to this registry by creating YAML files under `./data/filetypes` and `./data/extractors`.
+You can contribute file type and extractor entries to this registry by creating YAML files under `./data/filetypes` and `./data/extractors`, following the schemas at [marda-alliance/metadata_extractors_schema](https://github.com/marda-alliance/metadata_extractors_schema) ([online documentation](https://marda-alliance.github.io/metadata_extractors_schema)].
+
 After submitting a pull request, this data will be validated and added to the deployed database once it is merged.
 
 ## Development
