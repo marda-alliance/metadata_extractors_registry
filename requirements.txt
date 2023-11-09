@@ -1,7 +1,8 @@
 fastapi
 invoke
-linkml
+linkml ~= 1.6, != 1.6.2
+linkml-runtime ~= 1.6, != 1.6.1
 mongomock
 pre-commit
-pydantic~=2.0
+pydantic ~= 2.0
 uvicorn
