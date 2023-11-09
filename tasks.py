@@ -11,7 +11,7 @@ def regenerate_models(_):
 
     import linkml.generators.pydanticgen as pd
 
-    schemas = glob.glob("./schemas/schemas/*.yml")
+    schemas = glob.glob("./schemas/schemas/*.yaml")
 
     print("Regenerating pydantic models")
 
@@ -23,7 +23,7 @@ def regenerate_models(_):
         schema_path = Path(schema)
         gen = pd.PydanticGenerator(schema, pydantic_version="2", verbose=True)
         output = gen.serialize()
-        with open(MODEL_DIRECTORY / f"{schema_path.name.strip('.yml')}.py", "w") as f:
+        with open(MODEL_DIRECTORY / f"{schema_path.name.strip('.yaml')}.py", "w") as f:
             f.writelines(output)
 
     print("Done!")
