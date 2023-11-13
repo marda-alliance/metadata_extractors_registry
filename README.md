@@ -36,3 +36,20 @@ uvicorn src.marda_registry.app:app
 ```
 
 then navigate to http://localhost:5000 to test.
+
+## Deployment
+
+The registry app can be easily deployed via the given [Dockerfile](./Dockerfile).
+After cloning the repository (with submodules, following the instructions above), the image can be built for a given schema version by running
+
+```shell
+docker build . -t marda-registry
+```
+
+and then launched with
+
+```shell
+docker run -p 8080 --env PORT=8080 marda-registry
+```
+
+or equivalent command.
