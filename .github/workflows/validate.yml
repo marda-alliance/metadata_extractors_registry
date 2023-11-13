@@ -69,12 +69,9 @@ jobs:
               run: |
                   docker build . -t marda-registry
 
-            - name: Launch image
+            - name: Launch image and hit endpoints
               run: |
                   docker run -d --env PORT=8080 -p 8080:8080 marda-registry
-
-            - name: Test endpoints
-              run: |
                   curl http://localhost:8080/filetypes | jq
                   curl http://localhost:8080/extractors| jq
                   curl http://localhost:8080/redoc
