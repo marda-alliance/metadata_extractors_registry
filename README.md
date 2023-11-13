@@ -32,7 +32,7 @@ invoke regenerate-models
 From the repository root directory, launch the server with uvicorn:
 
 ```
-uvicorn src.marda_registry.app:app
+uvicorn marda_registry.app:app
 ```
 
 then navigate to http://localhost:5000 to test.
