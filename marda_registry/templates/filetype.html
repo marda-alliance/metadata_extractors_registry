@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ ft['id'] | default('Not found') }}{% endblock %}
+{% block content %}
+{% if ft == None %}
+    <h1>File Type not found</h1>
+    <p>Sorry, the file type you requested was not found.</p>
+{% endif %}
+
+<h2><span class="ft-id">{{ ft['id'] }}</span> <span class="ft-name">({{ ft['name'] }})</span></h2>
+
+<div class="entry-description">
+    <p>{{ ft['description'] }}</p>
+</div>
+
+Registered extractors:
+<ul>
+    {% for extractor in ft['registered_extractors'] %}
+        <li><span class="ex-id"><a href="../extractors/{{ extractor }}">{{ extractor }}</a></span></li>
+    {% endfor %}
+</ul>
+
+<p><a href="../filetypes">Return to the list of file types</a></p>
+{% endblock %}
