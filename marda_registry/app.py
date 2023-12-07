@@ -3,11 +3,14 @@
 import json
 import pathlib
 from functools import lru_cache
-from typing import List
 
 import mongomock as pymongo
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel
 
 from .models import Extractor, FileType
 from .utils import load_registry_collection
@@ -25,13 +28,49 @@ api = FastAPI()
 
 db: pymongo.Database = pymongo.MongoClient().registry
 
+templates = Jinja2Templates(directory=pathlib.Path(__file__).parent / "templates")
 
-@app.get("/filetypes")
+app.mount(
+    "/static",
+    StaticFiles(directory=pathlib.Path(__file__).parent / "static"),
+    name="static",
+)
+
+
+class JSONAPIResponse(BaseModel):
+    data: list[FileType] | list[Extractor] | FileType | Extractor
+    meta: dict | None = None
+
+
+class FileTypeEntryResponse(JSONAPIResponse):
+    data: list[FileType]
+
+
+class ExtractorEntryResponse(JSONAPIResponse):
+    data: list[Extractor]
+
+
+class SingleFileTypeEntryResponse(JSONAPIResponse):
+    data: FileType
+
+
+class SingleExtractorEntryResponse(JSONAPIResponse):
+    data: Extractor
+
+
+@api.get("/filetypes", response_model=FileTypeEntryResponse)
 def get_filetypes():
-    return list(db.filetypes.find(projection={"_id": 0}))
+    return {"data": list(db.filetypes.find(projection={"_id": 0})), "meta": _get_info()}
 
 
-@app.get("/filetypes/{id}", response_model=FileType)
+@app.get("/filetypes", response_class=HTMLResponse)
+def get_filetypes_html(request: Request):
+    return templates.TemplateResponse(
+        "filetypes.html", {"request": request, "data": get_filetypes()["data"]}
+    )
+
+
+@api.get("/filetypes/{id}", response_model=SingleFileTypeEntryResponse)
 def get_filetype(id: str):
     result = db.filetypes.find_one({"id": id.lower()}, projection={"_id": 0})
 
@@ -42,35 +81,63 @@ def get_filetype(id: str):
         raise HTTPException(status_code=404, detail="File type not found")
 
     result["registered_extractors"] = {_["id"] for _ in registered_extractors}
-    return result
+    return {"data": result, "meta": _get_info()}
 
 
-@app.get("/search-filetypes", response_model=List[FileType])
+@app.get("/filetypes/{id}", response_class=HTMLResponse)
+def get_filetype_html(request: Request, id: str):
+    try:
+        ft = get_filetype(id)["data"]
+    except HTTPException:
+        ft = None
+    return templates.TemplateResponse("filetype.html", {"request": request, "ft": ft})
+
+
+@api.get("/search-filetypes", response_model=FileTypeEntryResponse)
 def search_file_types(query: str):
     results = list(db.filetypes.find({"$text": query}, projection={"_id": 0}))
-    return results
+    return {"data": results, "meta": _get_info()}
+
+
+@api.get("/extractors", response_model=ExtractorEntryResponse)
+def get_extractors():
+    return {
+        "data": list(db.extractors.find({}, projection={"_id": 0})),
+        "meta": _get_info(),
+    }
 
 
 @app.get("/extractors")
-def get_extractors():
-    return list(db.extractors.find({}, projection={"_id": 0}))
+def get_extractors_html(request: Request):
+    return templates.TemplateResponse(
+        "extractors.html", {"request": request, "data": get_extractors()["data"]}
+    )
 
 
-@app.get("/extractors/{id}", response_model=Extractor)
+@api.get("/extractors/{id}", response_model=SingleExtractorEntryResponse)
 def get_extractor(id: str):
     result = db.extractors.find_one({"id": id.lower()}, projection={"_id": 0})
     if not result:
         raise HTTPException(status_code=404, detail="File type not found")
-    return result
+    return {"data": result, "meta": _get_info()}
 
 
-@app.get("/search-extractors", response_model=List[Extractor])
+@app.get("/extractors/{id}")
+def get_extractor_html(request: Request, id: str):
+    try:
+        ex = get_extractor(id)["data"]
+    except HTTPException:
+        ex = None
+    return templates.TemplateResponse("extractor.html", {"request": request, "ex": ex})
+
+
+@api.get("/search-extractors", response_model=ExtractorEntryResponse)
 def search_extractors(query: str):
     results = list(db.extractors.find({"$text": query}, projection={"_id": 0}))
-    return results
+    return {"data": results, "meta": _get_info()}
 
 
-@app.get("/")
+@api.get("/")
 def get_info():
     return _get_info()
 
@@ -91,8 +158,8 @@ async def load_data():
     _get_info()
 
 
-api.mount(f"/{__api_version__}", app)
-api.mount("/", app)
+app.mount(f"/api/{__api_version__}", api)
+app.mount("/api/", api)
 
 
 if __name__ == "__main__":
