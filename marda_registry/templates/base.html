@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://www.marda-alliance.org/wp-content/uploads/2023/04/cropped-favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    <title>{% block title %}{% endblock %} - MaRDA Registry</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li class="ex" ><a href="{{ url_for('get_extractors_html') }}">Extractors</a></li>
+                <li class="ft"><a href="{{ url_for('get_filetypes_html') }}">File types</a></li>
+                <li><a href="{{ url_for('get_info') }}">JSON API</a></li>
+                <li><a href="https://github.com/marda-alliance/metadata_extractors"><i class="fa fa-github"></i> GitHub</a></li>
+            </ul>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}{{ ex['id'] | default('Not found') }}{% endblock %}
+{% block content %}
+{% if ex == None %}
+    <h1>Extractor not found</h1>
+    <p>Sorry, the extractor you requested was not found.</p>
+{% endif %}
+
+<h2><span class="ex-id">{{ ex['id'] }}</span> <span class="ex-name">({{ ex['name'] }})</span></h2>
+
+{% if ex['license'] %}
+<div clas="ex-license">
+    <i class="fa fa-balance-scale"></i>
+    {% if ex['license'].get('spdx') %}
+        <a href="https://spdx.org/licenses/{{ ex['license']['spdx'] }}" aria-label="SPDX License">{{ ex['license']['spdx'] }}</a>
+    {% else %}
+        <a href="{{ ex['license']['uri'] }}" aria-label="License">{{ ex['license']['uri'] }}</a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if ex['source_repository'] %}
+<div class="ex-repo">
+    <i class="fa fa-code-fork" aria-hidden="true"></i>
+    <a href="{{ ex['source_repository'] }}" aria-label="Source code repository">{{ ex['source_repository'] }}</a>
+</div>
+{% endif %}
+
+{% if ex['source_repository'] %}
+<div class="entry-docs">
+    <i class="fa fa-book" aria-hidden="true"></i>
+    <a href="{{ ex['documentation'] }}" aria-label="Documentation page">{{ ex['documentation'] }}</a>
+</div>
+{% endif %}
+
+{% if ex['description'] %}
+<div class="entry-description" aria-label="Description">
+    <p>{{ ex['description'] }}</p>
+</div>
+{% endif %}
+
+<h4>Instructions:</h4>
+<div class="ex-instructions">
+    {{ ex['instructions'] | default('None provided') }}
+</div>
+
+<h4>Supported file types:</h4>
+<ul>
+    {% for ft in ex['supported_filetypes'] %}
+        <li><span class="ft-id"><a href="../filetypes/{{ ft['id'] }}">{{ ft['id'] }}</a></span></li>
+        {% if ft['description'] %}
+            <ul>
+                <li class="ex-caveat-desc">{{ ft['description'] }}</li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<h4>References:</h4>
+<ul>
+    {% for ref in ex['citations'] %}
+        <li class="ex-citation">
+            <span class="ex-citation-type">{{ ref['type'] | title }}: </span>
+            <span class="ex-citation-creators">
+                {{ ', '.join(ref['creators']) }}
+            </span>
+            <span class="ex-citation-title">{{ ref['title'] }}</span>
+            <div class="ex-citation-uri">
+            {% if ref['uri'].startswith('doi:') %}
+                <span class="ex-citation-uri">
+                <a href="https://doi.org/{{ ref['uri'][4:] }}">{{ ref['uri'][4:] }}</a>
+                </span>
+            {% else %}
+                <span class="ex-citation-uri">
+                <a href="{{ ref['uri'] }}">{{ ref['uri'] }}</a>
+                </span>
+            {% endif %}
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+
+<p><a href="../extractors">Return to the list of extractors</a></p>
+{% endblock %}
