@@ -20,4 +20,4 @@ run invoke validate-entries
 cmd uvicorn marda_registry.app:app --host 0.0.0.0 --port ${PORT}
 
 healthcheck --interval=5m --timeout=3s --start-period=10s \
-  cmd curl --fail http://localhost:${PORT} || exit 1
+  cmd curl --fail http://localhost:${PORT}/api || exit 1
