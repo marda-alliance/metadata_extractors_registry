@@ -142,6 +142,12 @@ def get_info():
     return _get_info()
 
 
+@app.get("/", response_class=HTMLResponse)
+def get_index_html(request: Request):
+    """Simply return the file types list as the "homepage" for now."""
+    return get_filetypes_html(request)
+
+
 @lru_cache(maxsize=1)
 def _get_info():
     with open(pathlib.Path(__file__).parent / "data" / "meta.json") as f:
@@ -158,9 +164,9 @@ async def load_data():
     _get_info()
 
 
-app.mount(f"/api/{__api_version__}", api)
+app.mount(f"/api/v{__api_version__}", api)
 app.mount("/api/", api)
 
 
 if __name__ == "__main__":
-    uvicorn.run("__main__:api")
+    uvicorn.run("__main__:app")
