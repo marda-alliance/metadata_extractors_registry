@@ -10,8 +10,21 @@ h1 {
   text-underline-offset: 10px;
 }
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #0B1B28;
+  background-image: url("background.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   color: #F8F8F8;
   font-family: Iosevka, monospace;
 }
@@ -30,8 +43,7 @@ body {
 }
 
 .logo:hover {
-  filter: grayscale(1);
-  -webkit-filter: grayscale(1);
+  filter: drop-shadow(0px 0px 20px #58D0BB) saturate(150%);
 }
 
 .header-title {
@@ -41,13 +53,21 @@ body {
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: #0B1B28E3;
+  min-height: 100%;
+  min-height: 100vh;
+  max-width: 900px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
 }
 
 
 .entry-box {
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: 5px;
     padding-left: 25px;
     padding-bottom: 25px;
@@ -56,11 +76,11 @@ body {
 }
 
 .filetype {
-    border: 1px solid #EEFF41;
+    border: 2px solid #EEFF41;
 }
 
 .extractor {
-    border: 1px solid #FFAB40;
+    border: 2px solid #FFAB40;
 }
 
 .filetype:hover {
@@ -105,9 +125,10 @@ body {
 }
 
 .navbar {
-  background-color: #0B1B28;
   width: 100%;
   max-width: 100%;
+  font-size: 1.2em;
+  font-weight: bold;
   display: flex;
   padding: 0;
   margin: 0;
@@ -148,30 +169,30 @@ p > a:hover{
   text-align: center;
   padding: 15px;
   text-decoration: none;
-  border: 1px solid #58D0BB;
+  border: 2px solid #58D0BB;
 }
 
 .navbar a:hover {
   text-decoration: none;
   font-weight: bold;
   color: #F8F8F8;
-  box-shadow: 0px 0px 6px 1px #58D0BB;
+  box-shadow: 0px 0px 6px 2px #58D0BB;
 }
 
 .ex-link > a {
   color: #FFAB40;
-  border: 1px solid #FFAB40;
+  border: 2px solid #FFAB40;
 }
 
-.ex-link > a.hover {
-  box-shadow: 0px 0px 6px 1px #FFAB40;
+.ex-link > a:hover {
+  box-shadow: 0px 0px 6px 2px #FFAB40;
 }
 
-.ft-link > a.hover {
-  box-shadow: 0px 0px 6px 1px #EEFF41;
+.ft-link > a:hover {
+  box-shadow: 0px 0px 6px 2px #EEFF41;
 }
 
 .ft-link > a {
   color: #EEFF41;
-  border: 1px solid #EEFF41;
+  border: 2px solid #EEFF41;
 }
