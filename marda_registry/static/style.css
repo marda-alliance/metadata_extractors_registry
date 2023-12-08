@@ -1,23 +1,74 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.1/iosevka/iosevka.min.css');
+@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+}
+
 body {
   background-color: #0B1B28;
   color: #F8F8F8;
-  font-family: sans-serif;
+  font-family: Iosevka, monospace;
+}
+
+.logo {
+  filter: none;
+  -webkit-filter: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 10px;
+}
+
+.header {
+  padding: 10px;
+}
+
+.logo:hover {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+
+.header-title {
+  font-family: Karla, sans-serif;
+  padding: 10px;
+  font-size: 1.5em;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.extractor {
+
+.entry-box {
     border: 1px solid grey;
-    padding: 10px;
+    border-radius: 5px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    margin: 20px;
+    position: relative;
 }
 
-
 .filetype {
-    border: 1px solid grey;
-    padding: 10px;
+    border: 1px solid #EEFF41;
+}
+
+.extractor {
+    border: 1px solid #FFAB40;
+}
+
+.filetype:hover {
+    box-shadow: 0px 0px 6px 1px #EEFF41;
+}
+
+.extractor:hover {
+    box-shadow: 0px 0px 6px 1px #FFAB40;
 }
 
 .ft {
@@ -26,6 +77,10 @@ body {
 
 .ex {
   color: #FFAB40;
+}
+
+.read-more {
+  color: #F8F8F8;
 }
 
 .ft-id, .ft-id > a {
@@ -44,35 +99,79 @@ body {
   font-weight: bold;
 }
 
-a {
-    color: #58D0BB;
+.ex-id:hover, .ex-id > a:hover, .ft-id:hover, .ft-id > a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 .navbar {
   background-color: #0B1B28;
-  overflow: hidden;
-  font-size: 1.5em;
-  font-family: monospace;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex: wrap;
+  text-align: center;
 }
 
 .navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  align-items: center;
+  display: flex;
 }
 
 .navbar li {
-  float: left;
+  font-size: 1.1em;
+  width: 150px;
+}
+
+
+p > a{
+  color: #58D0BB;
+  text-decoration: none;
+}
+
+p > a:hover{
+  color: #F8F8F8;
+  box-shadow: 0px 0px 6px 1px #58D0BB;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .navbar a {
   display: block;
   color: #58D0BB;
   text-align: center;
-  padding: 14px 16px;
+  padding: 15px;
   text-decoration: none;
+  border: 1px solid #58D0BB;
 }
 
 .navbar a:hover {
+  text-decoration: none;
+  font-weight: bold;
   color: #F8F8F8;
+  box-shadow: 0px 0px 6px 1px #58D0BB;
+}
+
+.ex-link > a {
+  color: #FFAB40;
+  border: 1px solid #FFAB40;
+}
+
+.ex-link > a.hover {
+  box-shadow: 0px 0px 6px 1px #FFAB40;
+}
+
+.ft-link > a.hover {
+  box-shadow: 0px 0px 6px 1px #EEFF41;
+}
+
+.ft-link > a {
+  color: #EEFF41;
+  border: 1px solid #EEFF41;
 }

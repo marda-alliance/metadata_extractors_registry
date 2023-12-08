@@ -145,7 +145,7 @@ def get_info():
 @app.get("/", response_class=HTMLResponse)
 def get_index_html(request: Request):
     """Simply return the file types list as the "homepage" for now."""
-    return get_filetypes_html(request)
+    return templates.TemplateResponse("index.html", {"request": request})
 
 
 @lru_cache(maxsize=1)

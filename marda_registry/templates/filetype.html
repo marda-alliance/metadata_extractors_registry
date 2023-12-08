@@ -12,12 +12,16 @@
     <p>{{ ft['description'] }}</p>
 </div>
 
-Registered extractors:
-<ul>
-    {% for extractor in ft['registered_extractors'] %}
-        <li><span class="ex-id"><a href="../extractors/{{ extractor }}">{{ extractor }}</a></span></li>
-    {% endfor %}
-</ul>
+<h4>Registered extractors:</h4>
+{% if ft['registered_extractors'] | length == 0 %}
+    <p>No registered extractors found.</p>
+{% else %}
+    <ul>
+        {% for extractor in ft['registered_extractors'] %}
+            <li><span class="ex-id"><a href="../extractors/{{ extractor }}">{{ extractor }}</a></span></li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
-<p><a href="../filetypes">Return to the list of file types</a></p>
+<p><a class="ft" href="../filetypes">Return to the list of file types</a></p>
 {% endblock %}

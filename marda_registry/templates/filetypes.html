@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}File Types{% endblock %}
 {% block content %}
-<h1>File Types</h1>
 
 {% for ft in data %}
-    <div class="filetype">
+    <div class="entry-box filetype">
         <div class="entry-title">
             <h2><span class="ft-id"><a href="./filetypes/{{ ft['id'] }}">{{ ft['id'] }}</a></span> <span class="ft-name">({{ ft['name'] }})</span></h2>
         </div>
         <div class="entry-description">
             <p>{{ ft['description'] }}</p>
         </div>
+        <a href="./filetypes/{{ ft['id'] }}" class="read-more">More details</a>
     </div>
 {% endfor %}
 {% endblock %}

@@ -11,14 +11,32 @@
 </head>
 <body>
     <div class="container">
-        <nav class="navbar">
+
+        <div class="header">
+
+            <a href="https://marda-alliance.org"><img class="logo" src="https://avatars.githubusercontent.com/u/74017645?s=200&amp;v=4" alt="MaRDA" height="80"></a>
+            <div class="navbar">
+                <ul>
+                    <li><a href="{{ url_for('get_index_html') }}">About</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar" style="margin-left: auto !important; margin-right: auto !important;">
             <ul>
-                <li class="ex" ><a href="{{ url_for('get_extractors_html') }}">Extractors</a></li>
-                <li class="ft"><a href="{{ url_for('get_filetypes_html') }}">File types</a></li>
-                <li><a href="{{ url_for('get_info') }}">JSON API</a></li>
+                <li><a href="{{ url_for('get_info') }}">{} JSON API</a></li>
                 <li><a href="https://github.com/marda-alliance/metadata_extractors"><i class="fa fa-github"></i> GitHub</a></li>
             </ul>
-        </nav>
+            </div>
+
+            <div class="navbar">
+            <ul>
+                <li class="ft-link"><a href="{{ url_for('get_filetypes_html') }}">File types</a></li>
+                <li class="ex-link" ><a href="{{ url_for('get_extractors_html') }}">Extractors</a></li>
+            </ul>
+            </div>
+
+        </div>
+
         {% block content %}
         {% endblock %}
     </div>

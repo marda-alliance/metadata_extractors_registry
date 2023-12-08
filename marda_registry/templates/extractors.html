@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}Extractors{% endblock %}
 {% block content %}
-<h1>Extractors</h1>
 
 {% for ex in data %}
-    <div class="extractor">
+    <div class="entry-box extractor">
         <div class="entry-title">
             <h2><span class="ex-id"><a href="./extractors/{{ ex['id'] }}">{{ ex['id'] }}</a></span> <span class="ex-name">({{ ex['name'] }})</span></h2>
         </div>
         <div class="entry-description">
             <p>{{ ex['description'] }}</p>
         </div>
+        <a href="./extractors/{{ ex['id'] }}" class="read-more">More details</a>
     </div>
 {% endfor %}
 {% endblock %}
