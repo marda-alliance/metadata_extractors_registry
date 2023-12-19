@@ -151,6 +151,9 @@ body {
   width: 180px;
 }
 
+a {
+  color: #F8F8F8;
+}
 
 p > a{
   color: #58D0BB;
@@ -172,6 +175,7 @@ p > a:hover{
   text-decoration: none;
   border: 2px solid #58D0BB;
 }
+
 
 .navbar a:hover {
   text-decoration: none;
@@ -201,4 +205,9 @@ p > a:hover{
 .ft-link > a {
   color: #EEFF41;
   border: 2px solid #EEFF41;
+}
+
+
+.ex-citation-title {
+  font-style: italic;
 }
