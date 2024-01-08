@@ -1,0 +1,40 @@
+---
+id: qe-tools
+name: Tools for Quantum ESPRESSO
+description: A set of tools for the Quantum ESPRESSO suite of electronic-structure simulation codes.
+subject:
+    - atomistic simulation
+    - electronic structure calculations
+    - materials modeling
+source_repository: https://github.com/aiidateam/qe-tools
+usage:
+    - method: python
+      setup: qe_tools
+      command: qe_tools.extractors.extract({{ input_path }}, {{ input_type }})
+installation:
+    - method: pip
+      packages:
+          - git+https://github.com/edan-bainglass/qe-tools.git@marda-extractors-support
+      requires_python: ">=3.8"
+citations:
+    - uri: doi:10.1088/0953-8984/21/39/395502
+      creators:
+          - P. Giannozzi
+      title: "QUANTUM ESPRESSO: a modular and open-source software project for quantum simulations of materials"
+      type: article
+    - uri: https://github.com/aiidateam/qe-tools
+      creators:
+          - G. Pizzi
+      title: Repository of Quantum ESPRESSO tools
+      type: software
+supported_filetypes:
+    - id: qe-pw-in
+      description: An input file for the Quantum ESPRESSO PW package
+      template:
+        input_type: PW
+    - id: qe-cp-in
+      description: An input file for the Quantum ESPRESSO CP package
+      template:
+        input_type: CP
+license:
+    spdx: GPL2

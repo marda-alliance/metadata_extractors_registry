@@ -1,0 +1,13 @@
+---
+id: >-
+    qe-pw-in
+name: >-
+    QE PW input file
+description: >-
+    An input file for Quantum ESPRESSO's planewave (PW) package.
+subject:
+    - physics
+    - chemistry
+    - materials science
+associated_software:
+    - Quantum ESPRESSO
