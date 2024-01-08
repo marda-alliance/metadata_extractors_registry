@@ -1,0 +1,10 @@
+---
+id: qe-cp-in
+name: QE CP input file
+description: An input file for Quantum ESPRESSO's Car-Parrinello (CP) ab-initio molecular dynamics package.
+subject:
+    - physics
+    - chemistry
+    - materials science
+associated_software:
+    - Quantum ESPRESSO
