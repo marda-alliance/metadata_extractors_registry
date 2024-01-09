@@ -4,3 +4,4 @@
 *.dx filter=lfs diff=lfs merge=lfs -text
 *.spe filter=lfs diff=lfs merge=lfs -text
 *.xrdml filter=lfs diff=lfs merge=lfs -text
+*.in filter=lfs diff=lfs merge=lfs -text
