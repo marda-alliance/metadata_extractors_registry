@@ -1,4 +1,16 @@
-# MaRDA WG Extractors Registry
+<div align="center" style="padding-bottom: 1em;">
+<img width="100px" align="center" src="https://avatars.githubusercontent.com/u/74017645?s=200&v=4">
+</div>
+
+# <div align="center">MaRDA Metadata Extractors: Registry</div>
+
+<div align="center">
+
+
+[![Documentation](https://badgen.net/badge/docs/marda-registry.fly.dev/blue?icon=firefox)](https://marda-registry.fly.dev)
+![Github status](https://badgen.net/github/checks/marda-alliance/metadata_extractors_registry/?icon=github)
+
+</div>
 
 A place to develop and discuss the MaRDA Extractors WG registry.
 The idea is to collect various file formats used in materials science and chemistry, describe them with metadata, and provide links to software projects that can parse them.
