@@ -8,6 +8,9 @@ copy pyproject.toml /app
 
 copy schemas /app/schemas
 copy marda_registry /app/marda_registry
+copy README.md /app/
+
+# Needed to grab the VCS version from git tags
 run pip install .
 copy tasks.py /app
 
