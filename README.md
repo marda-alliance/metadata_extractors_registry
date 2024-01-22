@@ -21,9 +21,7 @@ The state of the `main` branch is deployed to https://marda-registry.fly.dev/, w
 
 ## Contributing
 
-You can contribute file type and extractor entries to this registry by creating YAML files under `./data/filetypes` and `./data/extractors`, following the schemas at [marda-alliance/metadata_extractors_schema](https://github.com/marda-alliance/metadata_extractors_schema) ([online documentation](https://marda-alliance.github.io/metadata_extractors_schema)].
-
-After submitting a pull request, this data will be validated and added to the deployed database once it is merged.
+You are welcome to contribute file type and extractor entries to this registry, by opening a pull request. Please see the [contributing guidelines](./CONTRIBUTING.md) for detailed steps. After submitting a pull request, this data will be validated and added to the deployed database once it is merged.
 
 ## Development
 
@@ -65,3 +63,7 @@ docker run -p 8080 --env PORT=8080 marda-registry
 ```
 
 or equivalent command.
+
+## Registry Maintainers
+- Matthew Evans, [@ml-evs](https://github.com/ml-evs)
+- Peter Kraus, [@PeterKraus](https://github.com/PeterKraus)
