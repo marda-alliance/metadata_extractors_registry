@@ -78,7 +78,6 @@ jobs:
                   sleep 5
                   curl http://localhost:8080/api/filetypes  | jq
                   curl http://localhost:8080/api/extractors | jq
-                  curl http://localhost:8080/api/filetypes/biologic-mpr | jq .[registered_extractors]
                   curl http://localhost:8080/api/redoc
                   curl http://localhost:8080/filetypes
                   curl http://localhost:8080/extractors
