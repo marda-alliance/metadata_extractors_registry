@@ -1,7 +1,1 @@
-*.mpr filter=lfs diff=lfs merge=lfs -text
-*.mpt filter=lfs diff=lfs merge=lfs -text
-*.ch filter=lfs diff=lfs merge=lfs -text
-*.dx filter=lfs diff=lfs merge=lfs -text
-*.spe filter=lfs diff=lfs merge=lfs -text
-*.xrdml filter=lfs diff=lfs merge=lfs -text
-*.in filter=lfs diff=lfs merge=lfs -text
+./marda_registry/data/lfs/*/* filter=lfs diff=lfs merge=lfs -text
