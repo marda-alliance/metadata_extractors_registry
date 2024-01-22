@@ -32,6 +32,9 @@ jobs:
             - name: Lint repository
               run: pre-commit run --all-files
 
+            - name: Check for bad file extensions
+              run: invoke check-for-yaml
+
     validate:
 
         runs-on: ubuntu-latest
