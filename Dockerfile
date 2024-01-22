@@ -4,11 +4,11 @@ env PORT=8000
 workdir /app
 
 # Copy local version of the registry and install reqs
-copy requirements.txt /app
-run pip install -r requirements.txt
+copy pyproject.toml /app
 
 copy schemas /app/schemas
 copy marda_registry /app/marda_registry
+run pip install .
 copy tasks.py /app
 
 # Regenerate models from the current schemas
