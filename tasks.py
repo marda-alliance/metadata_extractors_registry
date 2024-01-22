@@ -16,7 +16,7 @@ def regenerate_models(_):
     print("Regenerating pydantic models")
 
     if not schemas:
-        raise RuntimeError("No schemas found")
+        raise RuntimeError("No schemas found; check that the `schemas` git submodule is available")
 
     for schema in schemas:
         print(schema)

@@ -60,7 +60,28 @@ class SingleExtractorEntryResponse(JSONAPIResponse):
 
 @api.get("/filetypes", response_model=FileTypeEntryResponse)
 def get_filetypes():
-    return {"data": list(db.filetypes.find(projection={"_id": 0})), "meta": _get_info()}
+    return {
+        "data": list(db.filetypes.aggregate(
+            [
+                # Send an empty query to return all filetypes
+                {"$match": {}},
+                # Perform a lookup over extractors to find those that list each filetype ID under `supported_filetypes.id`
+                # and set the `extractors` variable
+                {"$lookup": {
+                    "from": "extractors",
+                    "localField": "id",
+                    "foreignField": "supported_filetypes.id",
+                    "as": "extractors"
+                }},
+                # Set the `registered_extractors` field to the list of extractor IDs, or an empty list if there are none
+                {"$set": {"registered_extractors": {
+                    "$ifNull": ["$extractors.id", []]
+                }}},
+                # Remove the temporary `extractors` field
+                {"$project": {"_id": 0, "extractors": 0}},
+                ])),
+        "meta": _get_info()
+    }
 
 
 @app.get("/filetypes", response_class=HTMLResponse)
