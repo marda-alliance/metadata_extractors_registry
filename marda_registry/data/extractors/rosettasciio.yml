@@ -33,8 +33,6 @@ usage:
     - method: python
       setup: rsciio
       command: rsciio.{{ input_type }}.file_reader({{ input_path }})
-      description: >-
-          This usage instruction is specifically for the renishaw-wdf file type.
 installation:
     - method: pip
       packages:
