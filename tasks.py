@@ -46,3 +46,28 @@ def validate_entries(_):
         print(f"Loaded {counts[type_]} {type_.__name__} entries")
 
     print("Done!")
+
+
+@task
+def check_for_yaml(_):
+    from pathlib import Path
+
+    print("Checking for erroneous .yaml files.")
+
+    extractors = list(
+        Path(__file__).parent.glob("./marda_registry/data/extractors/*.yaml")
+    )
+    filetypes = list(
+        Path(__file__).parent.glob("./marda_registry/data/filetypes/*.yaml")
+    )
+
+    for e in extractors:
+        print(f"Found {e} with bad file extension (should be .yml here)")
+
+    for f in filetypes:
+        print(f"Found {f} with bad file extension (should be .yml here)")
+
+    if extractors or filetypes:
+        raise RuntimeError(f"Found files with bad extensions: {filetypes} {extractors}")
+
+    print("Done!")
