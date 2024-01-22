@@ -12,11 +12,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
+from marda_registry import __api_version__
+
 from .models import Extractor, FileType
 from .utils import load_registry_collection
-
-__api_version__ = "0.3.0"
-
 
 app = FastAPI(
     title="MaRDA extractors registry API",

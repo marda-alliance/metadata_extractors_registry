@@ -3,15 +3,11 @@ requires = ["hatchling", "hatch-vcs >= 0.3.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.version]
-source = "vcs"
-fallback-version = "0.0.0"
+path = "marda_registry/__init__.py"
 
 [tool.hatch.metadata]
 # required to allow git deps in optional dependencies
 allow-direct-references = true
-
-[tool.hatch.build.hooks.vcs]
-version-file = "_version.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["marda_registry"]
