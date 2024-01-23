@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs >= 0.3.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "marda_registry/__init__.py"
+
+[tool.hatch.metadata]
+# required to allow git deps in optional dependencies
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["marda_registry"]
+
+[project]
+name = "marda-extractors-registry"
+readme = "README.md"
+dynamic = ["version"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Topic :: Other/Nonlisted Topic",
+    "Topic :: Scientific/Engineering",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "httpx",
+    "invoke",
+    "jinja2",
+    "linkml ~= 1.6, != 1.6.2",
+    "linkml-runtime ~= 1.6, != 1.6.1",
+    "mongomock",
+    "pre-commit",
+    "pydantic ~= 2.0",
+    "uvicorn"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "marda-extractors-api[formats] @ git+https://github.com/marda-alliance/metadata_extractors_api.git",
+]
+
+dev = [
+    "pre-commit",
+]
+
+[project.urls]
+repository = "https://github.com/marda-alliance/metadata_extractors_registry"
+
+[tool.ruff]
+select = ["E", "F", "I", "W", "Q"]
+ignore = ["E501", "E402"]
+fixable = ["A", "B", "C", "D", "E", "F", "I"]
+unfixable = []
+extend-exclude = [
+    "providers",
+]
+target-version = "py310"
+per-file-ignores = {}
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "skip"

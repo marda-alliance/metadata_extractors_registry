@@ -3,12 +3,17 @@ from python:3.11-slim-buster
 env PORT=8000
 workdir /app
 
+copy CONTRIBUTING.md LICENSE /app/
+
 # Copy local version of the registry and install reqs
-copy requirements.txt /app
-run pip install -r requirements.txt
+copy pyproject.toml /app
 
 copy schemas /app/schemas
 copy marda_registry /app/marda_registry
+copy README.md /app/
+
+# Needed to grab the VCS version from git tags
+run pip install .
 copy tasks.py /app
 
 # Regenerate models from the current schemas
