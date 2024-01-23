@@ -5,6 +5,8 @@ name: >-
     QE PW input file
 description: >-
     An input file for Quantum ESPRESSO's planewave (PW) package.
+associated_file_extensions:
+    - in
 subject:
     - physics
     - chemistry
