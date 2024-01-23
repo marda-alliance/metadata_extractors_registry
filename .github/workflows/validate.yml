@@ -57,7 +57,7 @@ jobs:
             - name: Run database ingestion tasks
               run: |
                   invoke validate-entries
-    
+
     test:
 
         runs-on: ubuntu-latest
@@ -80,7 +80,7 @@ jobs:
 
             - name: Run database ingestion tasks
               run: |
-                pytest -vvv --durations=0
+                  pytest -vvv --durations=0
 
     build:
         runs-on: ubuntu-latest
