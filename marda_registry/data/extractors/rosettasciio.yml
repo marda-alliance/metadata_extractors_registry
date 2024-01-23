@@ -27,7 +27,7 @@ citations:
     - uri: doi:10.5281/zenodo.592838
       title: HyperSpy
       type: software
-      authors:
+      creators:
         - Francisco de la Peñare
         - et al.
 source_repository: https://github.com/hyperspy/rosettasciio
