@@ -1,0 +1,19 @@
+---
+id: >-
+    zeiss-tiff
+name: >-
+    Zeiss TIFF
+description: >-
+    A specialisation of the Tag Image File Format (TIFF) that includes metadata
+    annotations from Zeiss microscopes.
+associated_vendors:
+    - Zeiss
+subject:
+    - microscopy
+associated_instruments:
+    - ZEISS GeminiSEM
+    - ZEISS Sigma
+    - ZEISS MultiSEM
+    - ZEISS EVO
+associated_software:
+    - ZEISS SmartSEM

@@ -1,0 +1,31 @@
+---
+id: >-
+    zeiss-tiff-meta
+name: >-
+    Zeiss TIFF Metadata Extractor
+description: >-
+    For reading metadata from Zeiss SEM tiff files and extracting the physical scale.
+supported_filetypes:
+    - id: zeiss-tiff
+license:
+    spdx: MIT
+subject:
+    - electron-microscopy
+    - imaging
+source_repository: https://github.com/ks00x/zeiss_tiff_meta
+documentation: https://github.com/ks00x/zeiss_tiff_meta
+citations:
+    - uri: https://github.com/ks00x/zeiss_tiff_meta
+      creators:
+          - K. Schwarzburg
+      title: 'zeiss_tiff_meta github repository'
+      type: software
+usage:
+    - method: python
+      setup: zeisstiffmeta
+      command: meta_to_dict(zeiss_meta({{ input_path }}))
+installation:
+    - method: pip
+      packages:
+          - git+https://github.com/ks00x/zeiss_tiff_meta
+      requires_python: ~=3.4
