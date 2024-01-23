@@ -83,6 +83,7 @@ def get_filetypes():
                     },
                     # Remove the temporary `extractors` field
                     {"$project": {"_id": 0, "extractors": 0}},
+                    {"$sort": {"id": 1}},
                 ]
             )
         ),
@@ -129,7 +130,7 @@ def search_file_types(query: str):
 @api.get("/extractors", response_model=ExtractorEntryResponse)
 def get_extractors():
     return {
-        "data": list(db.extractors.find({}, projection={"_id": 0})),
+        "data": list(db.extractors.find({}, projection={"_id": 0}, sort=[("id", 1),])),
         "meta": _get_info(),
     }
 
