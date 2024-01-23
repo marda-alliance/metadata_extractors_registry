@@ -3,6 +3,8 @@ from python:3.11-slim-buster
 env PORT=8000
 workdir /app
 
+copy CONTRIBUTING.md LICENSE /app/
+
 # Copy local version of the registry and install reqs
 copy pyproject.toml /app
 
