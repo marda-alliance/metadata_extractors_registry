@@ -23,7 +23,7 @@ citations:
 usage:
     - method: python
       setup: zeisstiffmeta
-      command: meta_to_dict(zeiss_meta({{ input_path }}))
+      command: zeisstiffmeta.meta_to_dict(zeisstiffmeta.zeiss_meta({{ input_path }}))
 installation:
     - method: pip
       packages:
