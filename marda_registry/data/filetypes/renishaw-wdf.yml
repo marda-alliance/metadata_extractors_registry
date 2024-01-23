@@ -7,6 +7,8 @@ description: >-
     A binary data file created by Renishaw Raman microscopes, optimised to handle
     very large datasets of multiple (millions) of Raman spectra taken at points of
     an optical image.
+associated_file_extensions:
+    - wdf
 associated_vendors:
     - Renishaw
 subject:

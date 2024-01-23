@@ -6,6 +6,8 @@ name: >-
 description: >-
     A raw data export file for Agilent OpenLab CDS. It is actually a zipped archive
     containing other binary data file formats.
+associated_file_extensions:
+    - dx
 associated_vendors:
     - Agilent
     - HP

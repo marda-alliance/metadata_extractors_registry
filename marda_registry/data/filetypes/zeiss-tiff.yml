@@ -6,6 +6,9 @@ name: >-
 description: >-
     A specialisation of the Tag Image File Format (TIFF) that includes metadata
     annotations from Zeiss microscopes.
+associated_file_extensions:
+    - tif
+    - tiff
 associated_vendors:
     - Zeiss
 subject:

@@ -7,6 +7,8 @@ description: >-
     A binary data file created by BioLogic cyclers, containing time- and frequency-domain
     data pertaining to many electrochemical techniques, such as voltammetry,
     potentiometry, coulometry and impedance spectroscopy.
+associated_file_extensions:
+    - mpr
 associated_vendors:
     - BioLogic
 subject:
@@ -38,3 +40,4 @@ associated_instruments:
     - BioLogic VMP-300
 associated_software:
     - BioLogic EC-Lab
+

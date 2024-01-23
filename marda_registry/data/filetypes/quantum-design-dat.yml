@@ -9,6 +9,10 @@ description: >-
     property measurements of various types. The  measurements may be the result of
     processing from additional raw data, e.g. raw SQUID voltage data in a Quantum
     Design .rw.dat file.
+associated_file_extensions:
+    - rw.dat
+    - rso.dat
+    - dat
 associated_vendors:
     - Quantum Design
 subject:
