@@ -27,7 +27,7 @@ repos:
             args: [--format, parsable, --strict, -d, '{line-length: {max: 100}}']
 
     - repo: https://github.com/psf/black
-      rev: 23.12.1
+      rev: 24.1.1
       hooks:
           - id: black
             name: Blacken
