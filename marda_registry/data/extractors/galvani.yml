@@ -1,0 +1,34 @@
+---
+id: >-
+    galvani
+name: >-
+    Galvani
+description: >-
+    Read proprietary file formats from electrochemical test stations
+supported_filetypes:
+    - id: biologic-mpr
+      description: >-
+          Note: support for MPR files created by ECLab >= 11.50 requires 
+          `galvani>0.3`.
+license:
+    spdx: GPL-3.0-only
+subject:
+    - electrochemistry
+    - voltammetry
+    - impedance spectropscopy
+citations:
+    - uri: https://github.com/echemdata/galvani
+      creators:
+          - C. Kerr
+      title: galvani github repository
+      type: software
+source_repository: https://github.com/echemdata/galvani
+usage:
+    - method: python
+      setup: galvani
+      command: galvani.BioLogic.MPRFile({{ input_path }})
+installation:
+    - method: pip
+      packages:
+          - galvani~=0.3.0
+      requires_python: '>=3.6'
