@@ -4,12 +4,13 @@ id: >-
 name: >-
     Galvani
 description: >-
-    Read proprietary file formats from electrochemical test stations
+    Read proprietary file formats from electrochemical test stations, including
+    BioLogic MPR and MPT files, and the res format from Arbin.
 supported_filetypes:
     - id: biologic-mpr
       description: >-
           Note: support for MPR files created by ECLab >= 11.50 requires 
-          `galvani>0.3`.
+          `galvani>=0.4`.
 license:
     spdx: GPL-3.0-only
 subject:
@@ -30,5 +31,5 @@ usage:
 installation:
     - method: pip
       packages:
-          - galvani~=0.3.0
+          - galvani ~= 0.4
       requires_python: '>=3.6'
