@@ -1,0 +1,49 @@
+---
+id: >-
+    NewareNDA 
+name: >-
+    NewareNDA
+description: >-
+    Python module and command line tool for reading and converting Neware nda and ndax battery cycling data files. 
+supported_filetypes:
+    - id: neware-nda
+license:
+    spdx: BSD-3-Clause
+subject:
+    - electrochemistry
+citations:
+    - uri: https://github.com/Solid-Energy-Systems/NewareNDA
+      creators:
+          - D. Cogswell
+      title: NewareNDA github repository
+      type: software
+source_repository: https://github.com/Solid-Energy-Systems/NewareNDA
+usage:
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format csv {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format excel {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format feather {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format hdf {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format json {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format parquet {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format pickle {{ output_path }}
+    - method: cli
+      command: NewareNDA-cli.py {{ input_path }} --format stata {{ output_path }}
+    - method: python
+      setup: NewareNDA 
+      command: NewareNDA.read({{ input_path }})
+installation:
+    - method: pip
+      packages:
+          - NewareNDA >= 2024
+      requires_python: '>=3.6'
+instructions: >-
+    Install the package into a Python 3.6+ environment with
+    `pip install NewareNDA`. The results will be returned as
+    a pandas dataframe.
