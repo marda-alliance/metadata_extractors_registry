@@ -9,6 +9,7 @@ supported_filetypes:
     - id: neware-nda
 license:
     spdx: BSD-3-Clause
+    uri: https://github.com/Solid-Energy-Systems/NewareNDA/blob/master/LICENSE
 subject:
     - electrochemistry
 citations:
