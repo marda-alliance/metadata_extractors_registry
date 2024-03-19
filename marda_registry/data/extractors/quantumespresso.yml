@@ -14,7 +14,7 @@ usage:
 installation:
     - method: pip
       packages:
-          - git+https://github.com/edan-bainglass/qe-tools.git@marda-extractors-support
+          - qe-tools>=2.2
       requires_python: ">=3.8"
 citations:
     - uri: doi:10.1088/0953-8984/21/39/395502
