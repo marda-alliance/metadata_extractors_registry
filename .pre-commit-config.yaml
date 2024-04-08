@@ -2,7 +2,7 @@
 exclude: ^(marda_registry/data/|marda_registry/models/)
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.5.0
+      rev: v4.6.0
       hooks:
           - id: check-symlinks
           - id: check-yaml
@@ -27,7 +27,7 @@ repos:
             args: [--format, parsable, --strict, -d, '{line-length: {max: 100}}']
 
     - repo: https://github.com/psf/black
-      rev: 24.2.0
+      rev: 24.3.0
       hooks:
           - id: black
             name: Blacken
@@ -38,7 +38,7 @@ repos:
           - id: flake8
 
     - repo: https://github.com/pre-commit/mirrors-mypy
-      rev: v1.8.0
+      rev: v1.9.0
       hooks:
           - id: mypy
             name: MyPy
