@@ -68,11 +68,11 @@ jobs:
                   submodules: true
             - name: Build image
               run: |
-                  docker build . -t marda-registry
+                  docker build . -t datatractor-yard
 
             - name: Launch image
               run: |
-                  docker run -d --env PORT=8080 -p 8080:8080 marda-registry
+                  docker run -d --env PORT=8080 -p 8080:8080 datatractor-yard
             - name: Hit registry endpoints
               run: |
                   sleep 5
