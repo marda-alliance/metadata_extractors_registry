@@ -6,7 +6,7 @@
     <p>Sorry, the file type you requested was not found.</p>
 {% endif %}
 
-<h2><span class="ft-id">{{ ft['id'] }}</span> <span class="ft-name">({{ ft['name'] }})</span></h2>
+<h2><span class="ft-id">{{ ft['id'] }}</span> <span class="ft-name">({{ ft['name'] }}) [<a href="../api/filetypes/{{ ft['id'] }}">JSON</a>]</span></h2>
 
 <div class="entry-description">
     <p>{{ ft['description'] }}</p>
@@ -22,6 +22,44 @@
         {% endfor %}
     </ul>
 {% endif %}
+
+{% if ft['associated_file_extensions'] | length != 0 %}
+<h4>Associated file extensions:</h4>
+<ul>
+    {% for ext in ft['associated_file_extensions'] %}
+        <li>{{ ext }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if ft['associated_software'] | length != 0 %}
+<h4>Associated software:</h4>
+<ul>
+    {% for software in ft['associated_software'] %}
+        <li>{{ software }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+{% if ft['associated_vendors'] | length != 0 %}
+<h4>Associated vendors:</h4>
+<ul>
+    {% for vendor in ft['associated_vendors'] %}
+        <li>{{ vendor }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if ft['subject'] | length != 0 %}
+<h4>Subjects:</h4>
+<ul>
+    {% for subject in ft['subject'] %}
+        <li>{{ subject }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
 
 <p><a class="ft" href="../filetypes">Return to the list of file types</a></p>
 {% endblock %}
