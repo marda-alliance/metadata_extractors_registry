@@ -94,3 +94,24 @@ def check_for_yaml(_):
         raise RuntimeError(f"Found files with bad extensions: {filetypes} {extractors}")
 
     print("Done!")
+
+@task
+def validate_lfs_examples(_):
+
+    filetype_ids = set(
+        d.stem for d in Path(__file__).parent.glob("./marda_registry/data/filetypes/*.yaml")
+    )
+
+    lfs_filetype_dirs = set(
+        d.name for d in Path(__file__).parent.glob("./marda_registry/data/lfs/*")
+    )
+
+    errors = []
+
+    for lfs_dir in lfs_filetype_dirs:
+        if lfs_dir not in filetype_ids:
+            errors.append(f"Found LFS directory {lfs_dir} without corresponding filetype")
+
+    if errors:
+        raise RuntimeError("\n".join(errors))
+
