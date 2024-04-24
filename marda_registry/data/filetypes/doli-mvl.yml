@@ -1,0 +1,17 @@
+---
+id: >-
+    doli-mvl
+name: >-
+    Doli MVL
+description: >-
+    A format for Doli binary file (.mvl) for tension-compression machine.
+associated_file_extensions:
+    - mvl
+associated_vendors:
+    - Doli (www.doli.de)
+subject:
+    - Tension-Compression
+associated_instruments:
+    - Doli
+associated_software:
+    - Test&Motion (Software for Universal Test Machines for Windows) Version 4.1

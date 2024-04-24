@@ -1,0 +1,20 @@
+---
+id: >-
+    keysight-g200-mss
+name: >-
+    Keysight/Agilent/MTS G200 Nanoindenter
+description: >-
+    A format for Keysight/Agilent/MTS G200 Nanoindenter (.mss)
+associated_file_extensions:
+    - mss
+associated_vendors:
+    - Keysight
+    - Agilent
+    - MTS
+subject:
+    - Nanoindentation
+associated_instruments:
+    - G200
+    - XP
+associated_software:
+    - Nanosuite

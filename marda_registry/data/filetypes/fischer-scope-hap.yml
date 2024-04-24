@@ -1,0 +1,17 @@
+---
+id: >-
+    fischer-scope-hap
+name: >-
+    Fischer Scope HAP
+description: >-
+    A format for Fischer Scope Indenter
+associated_file_extensions:
+    - hap
+associated_vendors:
+    - Helmut Fischer GmbH (www.helmut-fischer.com)
+subject:
+    - Nanoindentation
+associated_instruments:
+    - HM100
+associated_software:
+    - WIN-HCU

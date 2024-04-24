@@ -1,0 +1,17 @@
+---
+id: >-
+    kla-g200x-nmd
+name: >-
+    KLA G200X Nanoindenter
+description: >-
+    A format for KLA G200X Nanoindenter (.nmd)
+associated_file_extensions:
+    - nmd
+associated_vendors:
+    - KLA
+subject:
+    - Nanoindentation
+associated_instruments:
+    - G200X
+associated_software:
+    - Test&Run

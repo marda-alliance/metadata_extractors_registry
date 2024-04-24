@@ -1,0 +1,43 @@
+---
+id: >-
+    pasta-converters
+name: >-
+    Extractors from PASTA-ELN
+description: >-
+    A collection of extractors for
+    - Doli binary file (.mvl) for tension-compression machine.
+    - Fischer Scope Indenter (.hap)
+    - KLA G200X Nanoindenter (.NMD)
+    Outputs to hdf5 / Nexus format
+supported_filetypes:
+    - id: doli-mvl
+    - id: fischer-scope-hap
+    - id: kla-g200x-nmd
+license:
+    spdx: MIT
+subject:
+    - Tension-Compression
+    - Nanoindentation
+source_repository: https://github.com/PASTA-ELN/Converters
+documentation: https://github.com/PASTA-ELN/Converters
+citations:
+    - uri: https://github.com/PASTA-ELN/Converters
+      creators:
+          - S. Brinckmann
+      title: 'converters from binary files to hdf5'
+      type: software
+usage:
+    - method: cli
+      command: converter_hap {{ input_path }}
+      supported_filetypes: [fischer-scope-hap]
+    - method: cli
+      command: converter_mvl {{ input_path }}
+      supported_filetypes: [doli-mvl]
+    - method: cli
+      command: converter_nmd {{ input_path }}
+      supported_filetypes: [kla-g200x-nmd]
+installation:
+    - method: pip
+      packages:
+          - git+https://github.com/PASTA-ELN/Converters
+      requires_python: '>=3.9'
