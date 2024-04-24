@@ -39,13 +39,34 @@ def validate_entries(_):
     from marda_registry.utils import load_registry_collection
 
     counts = {}
+    errors = []
     for type_ in (FileType, Extractor):
-        counts[type_] = load_registry_collection(
+        entries = load_registry_collection(
             type_,
             database=None,
             validate=True,
         )
+        counts[type_] = len(entries)
         print(f"Loaded {counts[type_]} {type_.__name__} entries")
+
+        if type_ is Extractor:
+            filetype_ids = set(
+                d.stem
+                for d in Path(__file__).parent.glob(
+                    "./marda_registry/data/filetypes/*.yml"
+                )
+            )
+
+            for extractor in entries:
+                for filetype in extractor.supported_filetypes:
+                    if filetype.id not in filetype_ids:
+                        breakpoint()
+                        errors.append(
+                            f"Extractor {extractor.name=} has invalid filetype {filetype.id=}. Should be one of {filetype_ids=}"
+                        )
+
+    if errors:
+        raise RuntimeError("\n".join(errors))
 
     print("Done!")
 
