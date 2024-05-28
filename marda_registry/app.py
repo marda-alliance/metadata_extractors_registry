@@ -6,8 +6,8 @@ from functools import lru_cache
 
 import mongomock as pymongo
 import uvicorn
-from fastapi import FastAPI, HTTPException, RedirectResponse, Request
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
