@@ -6,7 +6,7 @@ from functools import lru_cache
 
 import mongomock as pymongo
 import uvicorn
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, RedirectResponse
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -19,7 +19,7 @@ from .utils import load_registry_collection
 
 app = FastAPI(
     title="MaRDA extractors registry API",
-    description=f"This server implements v{__api_version__} of the [MaRDA extractors WG](https://github.com/marda-alliance/metadata_extractors) registry API.",  # noqa: E501
+    description=f"This server implements v{__api_version__} of the [MaRDA extractors WG](https://github.com/marda-alliance/metadata_extractors) registry API, please visit yard.datatractor.org instead.",  # noqa: E501
     version=__api_version__,
 )
 
@@ -180,8 +180,7 @@ def get_info():
 
 @app.get("/", response_class=HTMLResponse)
 def get_index_html(request: Request):
-    """Simply return the file types list as the "homepage" for now."""
-    return templates.TemplateResponse("index.html", {"request": request})
+    return RedirectResponse("https://yard.datatractor.org", status_code=301)
 
 
 @lru_cache(maxsize=1)
