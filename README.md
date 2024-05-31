@@ -1,3 +1,5 @@
+> Note: As of May 2024, this repository has been archived and the development of the registry of metadata extractors continues under in the [`datatractor/yard`](https://github.com/datatractor/yard) repository.
+
 <div align="center" style="padding-bottom: 1em;">
 <img width="100px" align="center" src="https://avatars.githubusercontent.com/u/74017645?s=200&v=4">
 </div>
